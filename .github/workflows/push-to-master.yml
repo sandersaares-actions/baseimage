@@ -1,0 +1,15 @@
+on:
+  push:
+    branches: ['master']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: sandersaares/github-actions-baseimage
+        username: sandersaares
+        password: ${{ secrets.docker_hub_token }}
+        snapshot: true
