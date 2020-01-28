@@ -12,4 +12,3 @@ jobs:
         name: sandersaares/github-actions-baseimage
         username: sandersaares
         password: ${{ secrets.docker_hub_token }}
-        snapshot: true
